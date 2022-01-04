@@ -1,10 +1,10 @@
 class Point():
     def __init__(self, x, parent=None):
         self.x = x
-        self.step = 0
+        self.step = 1
         self.record=[x]
         if parent:
-            self.step = parent.step
+            self.step = parent.step + 1
             self.record=parent.record+self.record
 
 N = int(input())
@@ -18,10 +18,8 @@ while Stack:
     if P in visited:
         continue
     visited.add(P.x)
-    P.step += 1
     if not book[(P.x)]:
         steps.add(P.step)
-        P.step = 0
         continue
     for i in book[P.x]:
         Stack.append(Point(i, P))
