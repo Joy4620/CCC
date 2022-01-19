@@ -15,7 +15,4 @@ while meters:
             meters -= 20
             clock += 20
 
-output = f'0{str((clock//60)%24)}' if len(str((clock//60)%24)) == 1 else str((clock//60)%24)
-output += f':0{str(clock%60)}' if len(str(clock%60)) == 1 else f':{str(clock%60)}'
-print(output)
-
+print((f'0{str((clock//60)%24)}' if len(str((clock//60)%24)) == 1 else str((clock//60)%24)) + (f':0{str(clock%60)}' if len(str(clock%60)) == 1 else f':{str(clock%60)}'))
